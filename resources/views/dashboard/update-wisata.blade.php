@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="icon" href="/assets/icon/logo.svg" type="image/x-icon">
-    <script src="https://cdn.tailwindcss.com"></script> 
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>{{$title}}</title>
 </head>
 <body>
@@ -41,7 +41,7 @@
                 <label for="image" class="block mb-2 text-sm font-medium text-gray-900">Gambar :</label>
                 <input type="hidden" name="oldImage" value="{{ $data_wisata->image }}" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" >
                 <input type="file" id="image" name="image" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" >
-                <img src="/assets/img/{{ $data_wisata->image }}" alt="gambar-wisata" class="mt-5 w-[5rem]">
+                <img src="{{asset('storage/img/' . $data_wisata->image ) }}" alt="gambar-wisata" class="mt-5 w-[20rem]">
             </div>
             <button type="submit" name="submit" value="submit" class="text-white w-full bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Masukkan Data</button>
         </form>

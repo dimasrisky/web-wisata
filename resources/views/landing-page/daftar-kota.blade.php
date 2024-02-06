@@ -10,7 +10,7 @@
         <div class="flex items-center justify-center flex-wrap w-full gap-3">
             @foreach ($daftar_kota as $kota)
             <div class="flex flex-col items-center w-[180px] p-3 shadow-lg rounded-md">
-                <img src="/assets/img/landmark/{{ $kota->image }}" alt="{{ $kota->nama_kota }}" class="w-[50%]">
+                <img src="{{ asset('storage/landmark/' . $kota->image ) }}" alt="{{ $kota->nama_kota }}" class="w-[50%]">
                 <h1 class="font-poetsen text-[15px] text-center">{{ $kota->nama_kota }}</h1>
                 <a href="{{ route('daftar-wisata', ['id' => $kota->id]) }}" class="text-white w-[100px] bg-[#0085FF] rounded-sm text-[10px] font-semibold px-5 py-1 text-center mt-2">Details</a>
             </div>

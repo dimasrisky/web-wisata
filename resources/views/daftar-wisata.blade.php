@@ -30,7 +30,7 @@
             @foreach ($data_wisata as $wisata)
                 <div class="w-[20rem] bg-white border border-gray-200 rounded-lg shadow ">
                     <a href="#">
-                        <img class="w-full" src="/assets/img/{{ $wisata->image }}" loading="lazy" />
+                        <img class="w-full" src="{{ asset('storage/img/' . $wisata->image ) }}" loading="lazy" />
                     </a>
                     <div class="p-5">
                         <a href="#">

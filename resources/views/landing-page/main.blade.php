@@ -1,7 +1,7 @@
 @extends('components.initial')
 @section('main-content')
     {{-- Start: Headline ( Hero Section )  --}}
-    <div class="w-full h-screen flex flex-col justify-center items-center bg-[url('/assets/img/backgrounds/bg-hero.png')] bg-cover bg-center relative">
+    <div class="w-full h-screen flex flex-col justify-center items-center bg-[url('/assets/backgrounds/bg-hero.png')] bg-cover bg-center relative">
         <div class="w-[95%] flex flex-col items-center">
             <h2 class="text-[42px] md:text-[48px] xl:text-[60px] font-poetsen text-white -mb-4 xl:-mb-7">Temukan</h2>
             <h1 class="text-[58px] md:text-[80px] xl:text-[90px] font-poetsen text-white">Destinasi Wisata</h1>
@@ -9,7 +9,7 @@
             @guest
                 <a href="{{ route('login.form') }}" class="w-[180px] md:w-[290px] hover:bg-white hover:text-black mt-8 border border-white bg-transparent text-white text-xs px-3 text-center py-2">Pesan Tiket</a>
                 @endguest
-            @auth    
+            @auth
                 <a href="{{ route('daftar-wisata') }}" class="w-[180px] md:w-[290px] hover:bg-white hover:text-black mt-8 border border-white bg-transparent text-white text-xs px-3 text-center py-2">Pesan Tiket</a>
             @endauth
         </div>
@@ -43,7 +43,7 @@
             {{-- Start: Card --}}
             @foreach ($top_wisata as $wisata)
                 <div class="w-[95%] md:w-[380px] flex flex-col mx-auto border border-[#A9A9A9] border-opacity-50 shadow-lg pb-4">
-                    <img src="/assets/img/{{ $wisata->image }}" alt="destinasi" class="w-full">
+                    <img src="{{ asset('storage/img/' . $wisata->image) }}" alt="destinasi" class="w-full">
                     <h1 class="font-poetsen text-[30px] px-3">{{ $wisata->nama }}</h1>
                     <div class="w-[95%] px-3 flex justify-between items-center">
                         <p class="text-[15px] text-green-500">Rp {{ $wisata->harga_tiket }}</p>
